@@ -1,0 +1,66 @@
+/* OrdersPage.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+  }
+  
+  h2 {
+    color: #333;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+ .orders-table-container button {
+  
+    cursor: pointer;
+    margin: 5px;
+    padding: 10px;
+    width: 150px;
+    background: linear-gradient(to right, #3d4050, #1f2029);
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+
+  @media (max-width: 600px) {
+    th, td {
+      font-size: 14px;
+    }
+  
+    button {
+      font-size: 12px;
+    }
+  }
+
+.orders-container {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.orders-table-container {
+  height: calc(80% - 40px); /* Adjust the height accordingly */
+  overflow-y: auto;
+}

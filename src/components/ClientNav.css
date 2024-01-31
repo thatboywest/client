@@ -1,0 +1,159 @@
+/* Nav.css */
+
+nav {
+    background-color: rgb(223, 221, 223);
+    color:#234567;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    height: 10vh;
+    box-shadow: 
+               -15px -15px 30px #ffffff;
+               padding: 20px 30px;
+  
+    
+    
+   
+  }
+nav a {
+  text-decoration: none;
+  color: #234567;
+}
+.logo{
+  object-fit: contain;
+
+}
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+  }
+ 
+  .menu-icon {
+    display: none; 
+    cursor: pointer;
+    margin-left: 15px; 
+    background-color: #234567;
+  }
+  
+  .menu-icon.open .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+  
+  .menu-icon.open .bar:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .menu-icon.open .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+  
+  .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  nav li {
+    margin-right: 15px;
+    cursor: pointer;
+    color:#234567;
+  }
+  
+    nav li:hover {
+    text-decoration: underline;
+    color: rgb(33, 75, 241);
+
+  }
+  /* Add this CSS to your existing styles or create a new CSS file */
+
+/* Dropdown styling */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown button styling */
+.dropdown .dropbtn {
+  cursor: pointer;
+  padding: 10px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Dropdown links styling */
+.dropdown-content a {
+  color: #333;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown content when hovering over the dropdown button */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+  
+  
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+  }
+
+  .menu-icon {
+    display: block;
+    color: #3498db;
+  }
+
+  .nav-menu {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    position: absolute;
+    top: 70px;
+    width: 100%;
+    background-color: #bebbbb47;
+    color: #ffffff;
+    z-index: 1;
+    display: none;
+    /* margin: 20px; Remove or adjust this margin */
+  }
+
+  .nav-menu.show {
+    display: flex;
+  }
+
+  .nav-menu li {
+    margin: 10px 0;
+    color: black;
+  }
+}

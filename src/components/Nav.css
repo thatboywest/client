@@ -1,0 +1,30 @@
+/* Add your custom styles here */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #3498db; /* Set your desired background color */
+    color: #fff; /* Set your desired text color */
+  }
+  
+  .logo {
+    width: 50px; /* Set your desired logo width */
+    height: auto;
+  }
+  
+  .button {
+    padding: 10px 15px;
+    background-color: #2ecc71; /* Set your desired button color */
+    color: #fff; /* Set your desired button text color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .button:hover {
+    background-color: #27ae60; /* Set your desired button color on hover */
+  }
+  

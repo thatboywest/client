@@ -1,0 +1,75 @@
+/* Checkin.css */
+.chekin{
+  overflow-x: scroll;
+}
+.chekin p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.chekin form {
+  max-width: 600px;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+ 
+ 
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.chekin label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.chekin input, select {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 16px;
+}
+
+.chekin select {
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.button-container {
+  margin-top: 20px;
+}
+
+.button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.button:hover {
+  background-color: #45a049;
+}
+
+.alert {
+  padding: 15px;
+  background-color: #f2dede;
+  color: #a94442;
+  border: 1px solid #ebccd1;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+/* Add more styles as needed */
+
+/* Add more styles as needed */
