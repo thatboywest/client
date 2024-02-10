@@ -1,0 +1,49 @@
+.track {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .track form {
+    margin-bottom: 20px;
+  }
+  
+  .track label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .track input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+  
+  .track .track-button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .track .track-button:hover {
+    background-color: #45a049;
+  }
+  
+  .track h2 {
+    margin-top: 20px;
+  }
+  
+  .track p {
+    margin-bottom: 20px;
+  }
+  
+  .track p.error {
+    color: red;
+  }
+  

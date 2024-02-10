@@ -5,19 +5,22 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #3498db; /* Set your desired background color */
-    color: #fff; /* Set your desired text color */
+    background-color: #1a1b1e;
+    color: #fff; 
+    position: sticky;
+    top: 0;
+    
   }
   
   .logo {
-    width: 50px; /* Set your desired logo width */
+    width: 50px; 
     height: auto;
   }
   
   .button {
     padding: 10px 15px;
-    background-color: #2ecc71; /* Set your desired button color */
-    color: #fff; /* Set your desired button text color */
+    background-color: #2e80cc; 
+    color: #fff; 
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -25,6 +28,6 @@
   }
   
   .button:hover {
-    background-color: #27ae60; /* Set your desired button color on hover */
+    background-color: #27ae60; 
   }
   

@@ -61,6 +61,6 @@ body {
 }
 
 .orders-table-container {
-  height: calc(80% - 40px); /* Adjust the height accordingly */
+  height: calc(80% - 40px); 
   overflow-y: auto;
 }

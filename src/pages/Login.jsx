@@ -1,16 +1,16 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
-import { useAuth } from '../context/AuthContext';
-import Alert from '../components/Alert';
-import './Login.css';
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { useAuth } from "../context/AuthContext";
+import Alert from "../components/Alert";
+import "./Login.css";
 
 const LoginComponent = () => {
   const navigate = useNavigate();
-  const [loginData, setLoginData] = useState({ email: '', password: '' });
+  const [loginData, setLoginData] = useState({ email: "", password: "" });
   const [loading, setLoading] = useState(false);
   const [isAlertVisible, setIsAlertVisible] = useState(false);
-  const [alertMessage, setAlertMessage] = useState('');
+  const [alertMessage, setAlertMessage] = useState("");
   const { login, isAuthenticated } = useAuth(); // Corrected destructure
 
   const handleChange = (e) => {
@@ -41,24 +41,33 @@ const LoginComponent = () => {
     setLoading(true);
 
     try {
-      const response = await axios.post('http://localhost:3001/api/login', loginData);
+      const response = await axios.post(
+        "http://localhost:3001/api/login",
+        loginData
+      );
 
       if (response.data.redirect) {
-        if (response.data.redirect === '/driver') {
+        if (response.data.redirect === "/driver") {
           login(); // Corrected, as user was not defined
-          navigate('/driver', { replace: true });
-        } else if (response.data.redirect === '/home') {
-          navigate('/home', { replace: true });
+          navigate("/driver", { replace: true });
+        } else if (response.data.redirect === "/home") {
+          navigate("/home", { replace: true });
         }
       } else {
-        handleShowAlert(response.data.message, 'success');
+        handleShowAlert(response.data.message, "success");
       }
     } catch (error) {
-      console.error('Login failed:', error.response ? error.response.data : error.message);
+      console.error(
+        "Login failed:",
+        error.response ? error.response.data : error.message
+      );
       if (error.response && error.response.status === 401) {
-        handleShowAlert('Invalid credentials. Please try again.', 'error');
+        handleShowAlert("Invalid credentials. Please try again.", "error");
       } else {
-        handleShowAlert('Internal server error. Please try again later.', 'error');
+        handleShowAlert(
+          "Internal server error. Please try again later.",
+          "error"
+        );
       }
     } finally {
       setLoading(false);
@@ -78,7 +87,13 @@ const LoginComponent = () => {
         <form onSubmit={handleSubmit}>
           <label>
             Email:
-            <input type="email" name="email" value={loginData.email} onChange={handleChange} required />
+            <input
+              type="email"
+              name="email"
+              value={loginData.email}
+              onChange={handleChange}
+              required
+            />
           </label>
           <br />
           <label>
@@ -93,9 +108,11 @@ const LoginComponent = () => {
             />
           </label>
           <br />
-          {isAlertVisible && <Alert message={alertMessage} onClose={handleCloseAlert} />}
+          {isAlertVisible && (
+            <Alert message={alertMessage} onClose={handleCloseAlert} />
+          )}
           <button type="submit" disabled={loading}>
-            {loading ? 'Logging in...' : 'Login'}
+            {loading ? "Logging in..." : "Login"}
           </button>
         </form>
       </div>

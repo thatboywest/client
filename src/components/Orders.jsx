@@ -16,7 +16,7 @@ function OrdersPage() {
           const ordersData = await response.json();
           const sortedOrders = [...ordersData].sort((a, b) => new Date(b.date) - new Date(a.date));
           setOrders(sortedOrders);
-          setFilteredOrders(sortedOrders); // Initialize filteredOrders with all orders
+          setFilteredOrders(sortedOrders); 
         } else {
           console.error('Failed to fetch orders');
         }

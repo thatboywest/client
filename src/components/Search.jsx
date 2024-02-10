@@ -7,7 +7,7 @@ const SearchInput = ({ onSearch }) => {
   const handleChange = (e) => {
     const text = e.target.value;
     setSearchText(text);
-    onSearch(text); // Trigger the search in the parent component
+    onSearch(text); 
   };
 
   return (

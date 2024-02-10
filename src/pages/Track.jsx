@@ -1,45 +1,61 @@
-// PackageStatusForm.js
-import React, { useState } from 'react';
-import axios from 'axios';
+// Track.js
 
-const PackageStatusForm = () => {
-  const [idNumber, setIdNumber] = useState('');
-  const [status, setStatus] = useState('');
-  const [error, setError] = useState('');
+import React, { useState } from "react";
+import ReviewForm from "../components/Reviewform";
+import axios from "axios";
+import "./Track.css";
 
-  const handleIdNumberChange = (e) => {
-    setIdNumber(e.target.value);
-  };
+const Track = () => {
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [packageStatus, setPackageStatus] = useState("");
+  const [error, setError] = useState("");
 
-  const handleFetchStatus = async () => {
+  const trackPackage = async () => {
     try {
-      const response = await axios.get(`http://localhost:3001/api/track/${idNumber}`);
-      setStatus(response.data.status);
-      setError('');
-    } catch (error) {
-      console.error('Error fetching package status:', error.response.data.error);
-      setStatus('');
-      setError('Package not found');
+      console.log("Tracking package for phone number:", phoneNumber);
+
+      const response = await axios.post("http://localhost:3001/api/track", {
+        phoneNumber: phoneNumber,
+      });
+
+      console.log("Server response:", response.data);
+
+      setPackageStatus(JSON.stringify(response.data.status));
+    } catch (err) {
+      console.error("Error tracking package:", err);
+      setError("Error tracking package. Please try again.");
     }
   };
 
   return (
-    <div>
-      <h1>Package Status Checker</h1>
-      <div>
-        <label htmlFor="idNumber">Enter ID Number:</label>
-        <input
-          type="text"
-          id="idNumber"
-          value={idNumber}
-          onChange={handleIdNumberChange}
-        />
+    <>
+      <div className="track">
+        <h1>Package Tracking</h1>
+        <form>
+          <label>
+            Phone Number:
+            <input
+              type="text"
+              value={phoneNumber}
+              onChange={(e) => setPhoneNumber(e.target.value)}
+            />
+          </label>
+
+          <button type="button" onClick={trackPackage}>
+            Track Package
+          </button>
+        </form>
+        {packageStatus && (
+          <div>
+            <h2>Package Status:</h2>
+            <p>{packageStatus}</p>
+          </div>
+        )}
+        {error && <p style={{ color: "red" }}>{error}</p>}
       </div>
-      <button onClick={handleFetchStatus}>Fetch Package Status</button>
-      {status && <p>Package Status: {status}</p>}
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-    </div>
+      <ReviewForm />
+    </>
   );
 };
 
-export default PackageStatusForm;
+export default Track;

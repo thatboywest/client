@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { MdIncompleteCircle } from "react-icons/md";
+
 import { MdPending } from "react-icons/md";
 import { IoCheckmarkDoneSharp } from "react-icons/io5";
 import { TfiAgenda } from "react-icons/tfi";
+import LineChartComponent from './CheckinChart';
 import './Dashboard.css';
 
 function Dashboard() {
@@ -17,7 +18,7 @@ function Dashboard() {
   useEffect(() => {
     const fetchDashboardData = async () => {
       try {
-        // Fetch total orders
+
         const responseOrders = await fetch('http://localhost:3001/api/checkin');
         if (responseOrders.ok) {
           const ordersData = await responseOrders.json();
@@ -38,7 +39,7 @@ function Dashboard() {
             const driversData = await responseDrivers.json();
             const totalDrivers = driversData.length;
 
-            // Set state with aggregated data
+        
             setDashboardData({
               totalOrders,
               completedOrders,
@@ -82,11 +83,8 @@ function Dashboard() {
           <p>On Route</p>
           <p className="info">{dashboardData.onRouteOrders}</p>
         </div>
-
-        <div className="card drivers">
-          <p>Drivers</p>
-          <p className="info">{dashboardData.totalDrivers}</p>
-        </div>
+  
+       
       </div>
     </>
   );

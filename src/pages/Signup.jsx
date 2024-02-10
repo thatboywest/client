@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
-import './Signup.css';
-import axios from 'axios';
+import React, { useState } from "react";
+import "./Signup.css";
+import axios from "axios";
 
 const SignupComponent = () => {
   const [userData, setUserData] = useState({
-    name: '',
-    stationId: '',
-    email: '',
-    password: '',
-    role: '', // New field for the role
+    name: "",
+    stationId: "",
+    email: "",
+    password: "",
+    role: "", // New field for the role
   });
 
   const handleChange = (e) => {
@@ -23,20 +23,25 @@ const SignupComponent = () => {
     e.preventDefault();
 
     try {
-      // Send the userData to your signup API endpoint using Axios
-      const response = await axios.post('http://localhost:3001/api/signup', userData);
-      
-      console.log('Signup successful:', response.data);
-      // Reset the form after successful submission
+      const response = await axios.post(
+        "http://localhost:3001/api/signup",
+        userData
+      );
+
+      console.log("Signup successful:", response.data);
+
       setUserData({
-        name: '',
-        stationId: '',
-        email: '',
-        password: '',
-        role: '',
+        name: "",
+        stationId: "",
+        email: "",
+        password: "",
+        role: "",
       });
     } catch (error) {
-      console.error('Signup failed:', error.response ? error.response.data : error.message);
+      console.error(
+        "Signup failed:",
+        error.response ? error.response.data : error.message
+      );
     }
   };
 
@@ -47,22 +52,42 @@ const SignupComponent = () => {
         <form onSubmit={handleSubmit}>
           <label>
             Name:
-            <input type="text" name="name" value={userData.name} onChange={handleChange} />
+            <input
+              type="text"
+              name="name"
+              value={userData.name}
+              onChange={handleChange}
+            />
           </label>
           <br />
           <label>
             Station ID:
-            <input type="text" name="stationId" value={userData.stationId} onChange={handleChange} />
+            <input
+              type="text"
+              name="stationId"
+              value={userData.stationId}
+              onChange={handleChange}
+            />
           </label>
           <br />
           <label>
             Email:
-            <input type="email" name="email" value={userData.email} onChange={handleChange} />
+            <input
+              type="email"
+              name="email"
+              value={userData.email}
+              onChange={handleChange}
+            />
           </label>
           <br />
           <label>
             Password:
-            <input type="password" name="password" value={userData.password} onChange={handleChange} />
+            <input
+              type="password"
+              name="password"
+              value={userData.password}
+              onChange={handleChange}
+            />
           </label>
           <br />
           <label>
@@ -72,7 +97,7 @@ const SignupComponent = () => {
                 type="radio"
                 name="role"
                 value="driver"
-                checked={userData.role === 'driver'}
+                checked={userData.role === "driver"}
                 onChange={handleChange}
               />
               <span>Driver</span>
@@ -82,7 +107,7 @@ const SignupComponent = () => {
                 type="radio"
                 name="role"
                 value="cashier"
-                checked={userData.role === 'cashier'}
+                checked={userData.role === "cashier"}
                 onChange={handleChange}
               />
               <span>Cashier</span>
