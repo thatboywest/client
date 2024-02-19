@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { MdPending } from "react-icons/md";
 import { IoCheckmarkDoneSharp } from "react-icons/io5";
 import { TfiAgenda } from "react-icons/tfi";
-import LineChartComponent from './CheckinChart';
+import OrderChart from './Chartjs';
 import './Dashboard.css';
 
 function Dashboard() {
@@ -63,6 +63,7 @@ function Dashboard() {
 
   return (
     <>
+    <div className="dashboard">
       <div className="dash">
         <div className="card orders">
           <p><TfiAgenda /> Orders</p>
@@ -85,6 +86,10 @@ function Dashboard() {
         </div>
   
        
+      </div>
+      <div className="chart">
+        <OrderChart/>
+      </div>
       </div>
     </>
   );

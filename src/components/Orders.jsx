@@ -66,6 +66,7 @@ function OrdersPage() {
         <SearchInput onSearch={handleSearch} />
       </center>
       <div className="orders-table-container">
+        
         <table>
           <thead>
             <tr>

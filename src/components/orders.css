@@ -58,6 +58,7 @@ body {
 .orders-container {
   height: 100vh;
   overflow: hidden;
+  margin: 20px;
 }
 
 .orders-table-container {

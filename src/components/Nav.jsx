@@ -1,16 +1,24 @@
 import React from 'react';
+import LogoutButton from '../components/Logoutbutton';
+import { useAuth } from '../context/AuthContext'; 
 import './Nav.css';
-import Logo from '../assets/Logo.png'
 
 function Nav() {
-    return(
+ 
+  const { isLoggedIn, } = useAuth();
+
+  return (
+    <nav>
+      {isLoggedIn ? (
         <>
-            <div className="navbar">
-                <img src={Logo} className="logo"/>
-                <button className="button">log out</button>
-            </div>
+          <p>Welcome,!</p>
+      <LogoutButton/>
         </>
-    )
-}
+      ) : (
+        <p>Please log in</p>
+      )}
+    </nav>
+  );
+};
 
 export default Nav;

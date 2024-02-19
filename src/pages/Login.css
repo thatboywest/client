@@ -1,54 +1,61 @@
-.login-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
+/* Add the following CSS styles to your stylesheet */
 
-.login-card {
+.form {
   width: 300px;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 100px;
 }
 
-.login-container h2 {
-  text-align: center;
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 500px;
+  height: 300px;
+
+  border: 1px solid black;
+}
+
+.form-container h1 {
   color: #333;
 }
 
-.login-container  form {
-  display: flex;
-  flex-direction: column;
+.input-group {
+  margin-bottom: 15px;
 }
 
-.login-container label {
-  margin-bottom: 10px;
-}
-
-.login-container input {
+.input-group input {
   width: 100%;
-  padding: 8px;
-  margin-bottom: 15px;
+  padding: 10px;
+  margin-bottom: 10px;
   border: 1px solid #ccc;
-  border-radius: 3px;
+  border-radius: 5px;
 }
 
-.error-message {
-  color: #c90f0f;
-  margin-bottom: 15px;
-}
-
-.login-container button {
+.submit-button {
+  background-color: rgb(22, 22, 29);
   color: white;
-  background-color: rgb(9, 9, 24);
+  padding: 10px 15px;
   border: none;
   border-radius: 5px;
-  padding: 10px 30px;
+  cursor: pointer;
 }
 
-.login-container button:disabled {
-  background-color: #cccccc;
-  cursor: not-allowed;
+.signup-link {
+  margin-top: 10px;
+}
+
+.signup-link a {
+  color: #4caf50;
+  text-decoration: none;
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
 }

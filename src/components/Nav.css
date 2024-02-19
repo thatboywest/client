@@ -5,11 +5,15 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #1a1b1e;
+    background: linear-gradient(to right,#1f2029, #3d4050);
     color: #fff; 
     position: sticky;
     top: 0;
     
+  }
+  nav{
+    display: flex;
+    justify-content: space-between;
   }
   
   .logo {
@@ -18,13 +22,13 @@
   }
   
   .button {
-    padding: 10px 15px;
-    background-color: #2e80cc; 
-    color: #fff; 
+    margin: 5px;
+    padding: 10px;
+    width: 150px;
+    background: linear-gradient(to right, #3d4050, #1f2029);
+    color: white;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
   }
   
   .button:hover {
