@@ -1,7 +1,7 @@
 // Nav.js
 
 import React, { useState } from "react";
-import Logo from '../assets/Logo.png'
+
 import "./Nav.css"; 
 import { Link } from "react-router-dom";
 import './ClientNav.css'
@@ -21,7 +21,7 @@ function ClientNav(params) {
           <div className="logo">
             <Link to="/Client">
               {" "}
-              <img className="logo" src={Logo} height={100} alt="" />
+         
             </Link>
           </div>
 
