@@ -20,8 +20,8 @@ function ClientNav(params) {
         <div className={`nav-container ${isMenuOpen ? "menu-open" : ""}`}>
           <div className="logo">
             <Link to="/Client">
-              {" "}
-         
+              
+            <h1>SWIFTCONNECT</h1>
             </Link>
           </div>
 
